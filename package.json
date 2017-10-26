@@ -50,6 +50,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "redux-devtools-extension": "^2.13.2"
   },
   "jest": {
@@ -92,5 +93,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "homepage": "https://zhvirblis.github.io/todocardapp/"
 }
