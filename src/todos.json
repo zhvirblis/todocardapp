@@ -1,0 +1,24 @@
+{
+    "todos": [
+        {
+            "id": 0,
+            "name": "Make the website",
+            "cardType": "task",
+            "details": "Develop web-shop for sport-market",
+            "progress": "inprogress"
+        },
+        {
+            "id": 1,
+            "name": "Develop Server",
+            "cardType": "task",
+            "details": "Develop site API",
+            "progress": "todo"
+        },
+        {
+            "id": 2,
+            "name": "Fixin Login",
+            "cardType": "bug",
+            "progress": "done"
+        }
+    ]
+}
