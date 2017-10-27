@@ -13,7 +13,7 @@ let store = createStore(todoApp, composeWithDevTools(
 
 render(
     <Provider store={store}>
-        <Router basename="/todocardapp">
+        <Router basename="/todocardapp/#">
             <App />
         </Router>
     </Provider>,
