@@ -3,11 +3,16 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { deleteTodo } from '../actions'
 import { allowDrop, drag, drop } from '../helpers/dragndrop'
+import { byOrder } from '../helpers/sorting'
 
 const TodoList = ({ todos, filter, name, dispatch}) => {
+
     todos = todos.filter(e=>{
         return e.progress === filter
     })
+
+    todos.sort(byOrder)
+
     return <div id={`column-${filter}`} className="column" onDrop={drop(filter, dispatch)} onDragOver={allowDrop}>
                 <h3 className="column-name">{name}</h3>
                 {todos.map(todo => (

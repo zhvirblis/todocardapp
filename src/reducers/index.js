@@ -10,7 +10,8 @@ const todos = (state = [...json.todos], action) => {
                     name: action.name,
                     progress: action.progress,
                     details: action.details,
-                    cardType: action.cardType
+                    cardType: action.cardType,
+                    order: action.order
                 }
             ]
         case 'DELETE_TODO':
@@ -19,14 +20,8 @@ const todos = (state = [...json.todos], action) => {
             })
         case 'EDIT_TODO':
             return state.map((element) => {
-                if (element.id == action.id) {
-                    return {
-                        id: action.id,
-                        name: action.name,
-                        progress: action.progress,
-                        details: action.details,
-                        cardType: action.cardType
-                    }
+                if (element.id === action.id) {
+                    return action
                 }
                 else {
                     return element

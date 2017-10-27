@@ -4,6 +4,7 @@ let nextTodoId = json.todos.length;
 export const addTodo = (name, cardType, progress, details) => {
     return {
         type: 'ADD_TODO',
+        order: nextTodoId,
         id: nextTodoId++,
         cardType,
         details,
@@ -12,11 +13,12 @@ export const addTodo = (name, cardType, progress, details) => {
     }
 }
 
-export const editTodo = (id, name, cardType, progress, details) => {
+export const editTodo = (id, name, cardType, progress, details, order) => {
     return {
         type: 'EDIT_TODO',
         name,
         details,
+        order,
         cardType,
         progress,
         id

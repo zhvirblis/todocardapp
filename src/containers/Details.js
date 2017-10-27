@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 let Details = ({match, dispatch, todos}) => {
    
     let todo = todos.find((element) => {
-        return element.id == match.params.number
+        return element.id === Number.parseInt(match.params.number, 10)
     })
     
     if(todo){
@@ -14,6 +14,7 @@ let Details = ({match, dispatch, todos}) => {
         let datails
         let cardType
         let progress
+        let order
         let onSubmitEdit = e => {
             e.preventDefault()
             if(!name.value.trim()){
@@ -26,7 +27,7 @@ let Details = ({match, dispatch, todos}) => {
                 return
             }
             console.log(`${name.value} ${progress.value} ${cardType.value} ${datails.value}`)
-            dispatch(editTodo(todo.id, name.value, cardType.value, progress.value, datails.value))
+            dispatch(editTodo(todo.id, name.value, cardType.value, progress.value, datails.value, order.value))
             window.history.back();
         }
         return (
@@ -67,10 +68,16 @@ let Details = ({match, dispatch, todos}) => {
                         <p><textarea ref={node => {
                                 if(node) {
                                     console.log('-- ToDo')
-                                    node.value = todo.details
+                                    node.value = todo.details || ""
                                     datails = node
                                 }
                                 }} placeholder="details"/></p>
+                        <p><input ref={node => {
+                            if(node) {
+                                node.value = todo.order
+                                order = node
+                            }
+                        }} placeholder="order"/></p>
                         <button type="submit">
                             Edit Todo
                         </button>

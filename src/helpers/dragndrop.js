@@ -15,6 +15,6 @@ export let drop = (filter, dispatch) => {
         ev.preventDefault()
         let todo = ev.dataTransfer.getData("text")
         todo = JSON.parse(todo)
-        dispatch(editTodo(todo.id, todo.name, todo.cardType, filter, todo.details))
+        dispatch(editTodo(todo.id, todo.name, todo.cardType, filter, todo.details, todo.order))
     }
 }

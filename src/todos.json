@@ -5,20 +5,23 @@
             "name": "Make the website",
             "cardType": "task",
             "details": "Develop web-shop for sport-market",
-            "progress": "inprogress"
+            "progress": "inprogress",
+            "order": 0
         },
         {
             "id": 1,
             "name": "Develop Server",
             "cardType": "task",
             "details": "Develop site API",
-            "progress": "todo"
+            "progress": "todo",
+            "order": 1
         },
         {
             "id": 2,
             "name": "Fixin Login",
             "cardType": "bug",
-            "progress": "done"
+            "progress": "done",
+            "order": 2
         }
     ]
 }
